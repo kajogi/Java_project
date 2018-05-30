@@ -89,6 +89,16 @@ public class DatabaseGUI extends JFrame {
                 }
             }
         });
+        btn_delete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    queryExecution("DELETE FROM currencies WHERE id = " + JT_id.getText().toString(),
+                            "Delete via ID");
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
 
@@ -118,6 +128,10 @@ public class DatabaseGUI extends JFrame {
             if (id == "Update via ID") {
                 int row = stmt.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Update successful!");
+            }
+            if (id == "Delete via ID") {
+                int row = stmt.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Delete successful!");
             }
 
         } catch (Exception e1) {

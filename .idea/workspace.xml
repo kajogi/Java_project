@@ -17,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CurrencyConverter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CurrencyConverter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -26,12 +26,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1351">
-              <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="749">
+              <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#3173#3174#0" expanded="true" />
                 <element signature="e#3205#3206#0" expanded="true" />
               </folding>
@@ -64,8 +65,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/currencyconverter/DBConnection.java" />
-        <option value="$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java" />
         <option value="$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java" />
+        <option value="$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java" />
       </list>
     </option>
   </component>
@@ -213,21 +214,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1351">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding>
-            <element signature="e#3173#3174#0" expanded="true" />
-            <element signature="e#3205#3206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="66" column="53" lean-forward="true" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3173#3174#0" expanded="true" />
+            <element signature="e#3205#3206#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
