@@ -10,6 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javax.sql.DataSource;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,23 +54,29 @@ public class CurrencyConverter extends Application {
                 "USD",
                 "GBP");
 
-        comboBox1.setOnAction();
-        comboBox2.setOnAction();
-        amountEntered.setOnAction();
-        button.setOnAction();
-        button2.setOnAction();
-
+        comboBox1.setOnAction(e -> firstCurrency(comboBox1.getValue().toString()));
+        comboBox2.setOnAction(e -> toCurrency(comboBox2.getValue().toString()));
+        amountEntered.setOnAction(e -> amount(Double.parseDouble(amountEntered.getText().toString())));
+        button.setOnAction(e -> {
+            try {
+                result.setText(calculateResult(firstCurrency(comboBox1.getValue().toString()), toCurrency(comboBox2.getValue().toString()), amount(Double.parseDouble(amountEntered.getText().toString()))));
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        });
+//        button2.setOnAction();
 
 
         VBox layout = new VBox(20);
         layout.setPadding(new Insets(20, 20, 20, 20));
-        layout.getChildren().addAll(button2, comboBox1, comboBox2, button, amountEntered, result);
+        layout.getChildren().addAll(button2, comboBox1, comboBox2, amountEntered, button, result);
 
         scene = new Scene(layout, 300, 300);
         window.setScene(scene);
         window.show();
 
     }
+
     private static String firstCurrency(String e1) {
         return e1;
     }
@@ -106,5 +114,27 @@ public class CurrencyConverter extends Application {
         }
 
         return rate;
+    }
+
+    public String calculateResult(String fromCurrencyCode, String toCurrencyCode, double amount) throws SQLException {
+
+        String fcc = fromCurrencyCode;
+        String tcc = toCurrencyCode;
+        double result = 0.0;
+        double rate = getRateFromDB(fcc, tcc);
+
+        if (fromCurrencyCode == toCurrencyCode) {
+            result = amount * 1;
+        } else {
+            result = amount * rate;
+        }
+
+        BigDecimal displayValue = new BigDecimal(result);
+        displayValue = displayValue.setScale(2, RoundingMode.HALF_UP);
+
+        String result_to_display = amount + fromCurrencyCode + " is equal to " + displayValue + " " + toCurrencyCode;
+
+        return result_to_display;
+
     }
 }
