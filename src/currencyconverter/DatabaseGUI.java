@@ -63,6 +63,17 @@ public class DatabaseGUI extends JFrame {
                 }
             }
         });
+        btn_insert.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    queryExecution("INSERT INTO currencies (id, code, value) VALUES (" + JT_id.getText().toString() +
+                            ", '" + JT_FromTo_Code.getText().toUpperCase() + "', '" + JT_Value.getText().toString() +
+                            "')", "Insert via ID");
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
 
@@ -84,6 +95,10 @@ public class DatabaseGUI extends JFrame {
                     JT_Value.setText(value_to_return);
                     JT_id.setText(id_to_return);
                 }
+            }
+            if (id == "Insert via ID") {
+                int row = stmt.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Insertion successful!");
             }
 
         } catch (Exception e1) {
