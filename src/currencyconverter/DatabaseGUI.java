@@ -1,6 +1,11 @@
 package currencyconverter;
 
+import javax.sql.DataSource;
 import javax.swing.*;
+import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class DatabaseGUI extends JFrame {
     JLabel JL_FromTo_Code, JL_Value, JL_id;
@@ -47,5 +52,46 @@ public class DatabaseGUI extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setSize(500, 200);
+
+        btn_search.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    queryExecution("SELECT id,value FROM currencies WHERE code LIKE " + "'%"
+                            + JT_FromTo_Code.getText().toUpperCase() + "%'", "Search via Code");
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+
+
+    public void queryExecution(String sql, String id) {
+        Connection connection = null;
+        Statement stmt = null;
+        DataSource dataSource = DBConnection.connectToDB();
+        try {
+            connection = dataSource.getConnection();
+            stmt = connection.createStatement();
+            if (id == "Search via Code") {
+                ResultSet execute = stmt.executeQuery(sql);
+                while (execute.next()) {
+                    int value_id = execute.getInt("id");
+                    float value = execute.getFloat("value");
+                    String value_to_return = String.valueOf(value);
+                    String id_to_return = String.valueOf(value_id);
+                    JT_Value.setText(value_to_return);
+                    JT_id.setText(id_to_return);
+                }
+            }
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public static void main() {
+        new DatabaseGUI();
     }
 }
