@@ -74,6 +74,21 @@ public class DatabaseGUI extends JFrame {
                 }
             }
         });
+        btn_update.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (JT_id != null && JT_FromTo_Code != null && JT_Value != null) {
+                        queryExecution("UPDATE currencies SET code = '" + JT_FromTo_Code.getText().toUpperCase()
+                                + "', value = '" + JT_Value.getText().toString() + "' WHERE id = "
+                                + JT_id.getText().toString(), "Update via ID");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "One or more parameters missing!");
+                    }
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
 
@@ -99,6 +114,10 @@ public class DatabaseGUI extends JFrame {
             if (id == "Insert via ID") {
                 int row = stmt.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Insertion successful!");
+            }
+            if (id == "Update via ID") {
+                int row = stmt.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Update successful!");
             }
 
         } catch (Exception e1) {
