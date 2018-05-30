@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5279c750-93c9-4e84-bb1f-e5fb235164f1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,13 +13,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Java_project$CurrencyConverter.ic" NAME="CurrencyConverter Coverage Results" MODIFIED="1527675471828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>currencyconverter.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="CurrencyConverter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="56" column="80" lean-forward="true" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
+            <state relative-caret-position="375">
+              <caret line="66" column="53" lean-forward="true" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -26,10 +32,11 @@
       <file leaf-file-name="DatabaseGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="73" column="13" lean-forward="true" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+            <state relative-caret-position="40">
+              <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3173#3174#0" expanded="true" />
+                <element signature="e#3205#3206#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +67,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/currencyconverter/DBConnection.java" />
-        <option value="$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java" />
         <option value="$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java" />
+        <option value="$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java" />
       </list>
     </option>
   </component>
@@ -179,6 +186,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32916668" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -210,17 +218,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/currencyconverter/CurrencyConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="56" column="80" lean-forward="true" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
+        <state relative-caret-position="375">
+          <caret line="66" column="53" lean-forward="true" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/currencyconverter/DatabaseGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="73" column="13" lean-forward="true" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        <state relative-caret-position="40">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3173#3174#0" expanded="true" />
+            <element signature="e#3205#3206#0" expanded="true" />
           </folding>
         </state>
       </provider>

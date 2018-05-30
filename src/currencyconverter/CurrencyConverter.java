@@ -64,7 +64,7 @@ public class CurrencyConverter extends Application {
                 e1.printStackTrace();
             }
         });
-//        button2.setOnAction();
+        button2.setOnAction(e -> DatabaseGUI.main());
 
 
         VBox layout = new VBox(20);
