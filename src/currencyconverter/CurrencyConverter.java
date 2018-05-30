@@ -9,6 +9,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class CurrencyConverter extends Application {
 
     Stage window;
@@ -46,6 +52,13 @@ public class CurrencyConverter extends Application {
                 "USD",
                 "GBP");
 
+        comboBox1.setOnAction();
+        comboBox2.setOnAction();
+        amountEntered.setOnAction();
+        button.setOnAction();
+        button2.setOnAction();
+
+
 
         VBox layout = new VBox(20);
         layout.setPadding(new Insets(20, 20, 20, 20));
@@ -55,5 +68,43 @@ public class CurrencyConverter extends Application {
         window.setScene(scene);
         window.show();
 
+    }
+    private static String firstCurrency(String e1) {
+        return e1;
+    }
+
+    private static String toCurrency(String e2) {
+        return e2;
+    }
+
+    private static double amount(double e3) {
+        return e3;
+    }
+
+    private static double getRateFromDB(String fromCode, String toCode) throws SQLException {
+        Connection connection = null;
+        Statement query = null;
+        DataSource dataSource = DBConnection.connectToDB();
+        double rate = 0.0;
+        try {
+
+            String s = fromCode + toCode;
+            connection = dataSource.getConnection();
+            query = connection.createStatement();
+            String sql = "SELECT value FROM currencies WHERE code LIKE " + "'%" + s + "%'";
+            ResultSet execute = query.executeQuery(sql);
+            while (execute.next()) {
+                rate = execute.getDouble("value");
+                return rate;
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            connection.close();
+            query.close();
+        }
+
+        return rate;
     }
 }
